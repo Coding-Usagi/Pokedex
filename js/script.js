@@ -7,7 +7,7 @@ let pokemonList = [
 
   {
     name: 'Scorbunny',
-    height: "1'00",
+    height: "1'07",
     type: 'Fire',
   },
 
@@ -17,8 +17,8 @@ let pokemonList = [
     type: 'Water'
   }
 ];
-
-for (let i = 0; i < pokemonList.length; i++) {
+// this doesn't have spacing yet
+for (let i = 0; i < pokemonList.length; i++){
   console.log(pokemonList[i])
   document.write(pokemonList[i].name + pokemonList[i].height)
 }
