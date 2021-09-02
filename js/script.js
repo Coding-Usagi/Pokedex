@@ -17,8 +17,8 @@ let pokemonList = [
     type: 'Water'
   }
 ];
-// this doesn't have spacing yet
+// Apparently double quotes in between add spacing???
 for (let i = 0; i < pokemonList.length; i++){
   console.log(pokemonList[i])
-  document.write(pokemonList[i].name + pokemonList[i].height)
+  document.write(pokemonList[i].name +  " " + pokemonList[i].height + " ")
 }
