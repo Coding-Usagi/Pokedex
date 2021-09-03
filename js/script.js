@@ -19,6 +19,13 @@ let pokemonList = [
 ];
 // Apparently double quotes in between add spacing???
 for (let i = 0; i < pokemonList.length; i++){
+  if (pokemonList[i].height > "1'00"){
+    result = "Wow that's big!";
+  } else {
+    result = "";
+  }
+
   console.log(pokemonList[i])
   document.write(pokemonList[i].name +  " " + pokemonList[i].height + " ")
+  document.write(result + " ")
 }
