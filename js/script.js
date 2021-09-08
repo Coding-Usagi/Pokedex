@@ -26,6 +26,6 @@ for (let i = 0; i < pokemonList.length; i++){
   }
 
   console.log(pokemonList[i])
-  document.write(pokemonList[i].name +  " " + pokemonList[i].height + " ")
+  document.write(pokemonList[i].name +  " " + pokemonList[i].height + " ");
   document.write(result + " ")
 }
