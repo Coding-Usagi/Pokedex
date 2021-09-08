@@ -19,7 +19,7 @@ let pokemonList = [
 ];
 
 pokemonList.forEach(function(pokemon){
-  document.write('<p>' + pokemon + '</p>');
+  document.write('<p>' + pokemon.name + " " + pokemon.height + " " + pokemon.type + '</p>');
   console.log(pokemon.name + pokemon.height + pokemon.type);
 });
 // Apparently double quotes in between add spacing???
