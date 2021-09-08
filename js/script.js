@@ -1,26 +1,37 @@
-let pokemonList = [
-  {
-    name: 'Grookey',
-    height: "1.00",
-    type: 'Grass'
-  },
+let pokemonRepository = (function(){
+  let pokemonList = [
+    {
+      name: 'Grookey',
+      height: "1.00",
+      type: 'Grass'
+    },
 
-  {
-    name: 'Scorbunny',
-    height: "1.07",
-    type: 'Fire',
-  },
+    {
+      name: 'Scorbunny',
+      height: "1.07",
+      type: 'Fire',
+    },
 
-  {
-    name: 'Sobble',
-    height: "1.00",
-    type: 'Water'
+    {
+      name: 'Sobble',
+      height: "1.00",
+      type: 'Water'
+    }
+  ];
+
+  function getAll(){
+    return pokemonList;
   }
-];
 
-pokemonList.forEach(function(pokemon){
+  function add(pokemon){
+    pokemonList.push(item);
+  };
+})();
+
+
+pokemonList.forEach(function(getAll()){
   document.write('<p>' + pokemon.name + " " + pokemon.height + " " + pokemon.type + '</p>');
-  console.log(pokemon.name + pokemon.height + pokemon.type);
+  console.log(pokemonRepository.getAll());
 });
 // Apparently double quotes in between add spacing???
 //for (let i = 0; i < pokemonList.length; i++){
