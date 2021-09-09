@@ -24,12 +24,17 @@ let pokemonRepository = (function(){
   }
 
   function add(pokemon){
-    pokemonList.push(item);
-  };
+    pokemonList.push(pokemon);
+
+    return {
+    add: add,
+    getAll: getAll
+    };
 })();
 
 
-pokemonList.forEach(function(getAll()){
+//pokemonList.forEach (function(getAll()){
+pokemonRepository.getAll().forEach(function(pokemon) {
   document.write('<p>' + pokemon.name + " " + pokemon.height + " " + pokemon.type + '</p>');
   console.log(pokemonRepository.getAll());
 });
