@@ -1,21 +1,21 @@
 let pokemonRepository = (function (){
   let pokemonList = [
     {
-      name: 'Grookey',
-      height: "1.00",
+      name: 'Chikorita',
+      height: "2.11",
       type: 'Grass'
     },
 
     {
-      name: 'Scorbunny',
-      height: "1.07",
-      type: 'Fire',
+      name: 'Bayleef',
+      height: "3.11",
+      type: 'Grass',
     },
 
     {
-      name: 'Sobble',
-      height: "1.00",
-      type: 'Water'
+      name: 'Meganium',
+      height: "5.11",
+      type: 'Grass'
     }
   ];
 
@@ -26,26 +26,23 @@ let pokemonRepository = (function (){
   function add(pokemon){
     pokemonList.push(pokemon);
   }
-
+  function addListItem(pokemon){
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listPokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-pkmn");
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon);
+  }
     return {
       add: add,
-      getAll: getAll
+      getAll: getAll,
+      addListItem: addListItem
     };
   })();
+console.log(pokemonRepository.getAll());
 
   pokemonRepository.getAll().forEach(function (pokemon){
-    document.write('<p>' + pokemon.name + " " + pokemon.height + " " + pokemon.type + '</p>');
-    console.log(pokemonRepository.getAll());
+    pokemonRepository.addListItem(pokemon);
   });
-// Apparently double quotes in between add spacing???
-//for (let i = 0; i < pokemonList.length; i++){
-  //if (pokemonList[i].height > 1.00){
-    //result = "Wow that's big!";
-  //} else {
-    //result = "";
-  //}
-
-  //console.log(pokemonList[i])
-  //document.write(pokemonList[i].name +  " " + pokemonList[i].height + " ");
-  //document.write(result + " ")
-//}
