@@ -38,6 +38,10 @@ let pokemonRepository = (function (){
     pokemonList.appendChild(listPokemon);
 
     button.addEventListener('click', showDetails(pokemon));
+    document.addEventListener("click", function(){
+      showModal(pokemon)
+      console.log(pokemon.name)
+    });
   }
 
   function showDetails(pokemon){
