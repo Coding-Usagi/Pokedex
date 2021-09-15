@@ -31,13 +31,14 @@ let pokemonRepository = (function (){
     let pokemonList = document.querySelector(".pokemon-list");
     let listPokemon = document.createElement("li");
     let button = document.createElement("button");
-    button.addEventListener('click', function(showDetails){
-      button.innerText = pokemon.name;
-      button.classList.add("button-test");
-    });
+    button.innerText = pokemon.name;
+    button.classList.add("button-test");
+    // appends need to be within the addlistitem function so they are separate from the button eventlistener
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
-  };
+
+    button.addEventListener('click', showDetails(pokemon));
+  }
 
   function showDetails(pokemon){
     console.log(pokemonRepository.getAll());
