@@ -53,7 +53,7 @@ let pokemonRepository = (function (){
       return response.json();
     }).then (function (details){
       // Add the details to the items
-      item.imageUrl = details.sprites.font_default;
+      item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
     }).catch(function (e){
