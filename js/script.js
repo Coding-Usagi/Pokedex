@@ -2,10 +2,6 @@ let pokemonRepository = (function (){
   let pokemonList = [];
   let apiUrl ='https://pokeapi.co/api/v2/pokemon/?limit=150%22';
 
-  function getAll(){
-    return pokemonList;
-  }
-
   let modalContainer = document.querySelector('#modal-container');
    function showModal(title, text) {
      modalContainer.innerHTML = '';
@@ -31,8 +27,6 @@ let pokemonRepository = (function (){
 
      modalContainer.classList.add('is-visible');
    }
-
-   let dialogPromiseReject; // This can be set later, by showDialog
 
    function hideModal() {
      let modalContainer = document.querySelector('#modal-container');
@@ -103,6 +97,10 @@ let pokemonRepository = (function (){
 
  })();
 
+ function getAll(){
+   return pokemonList;
+ }
+
   function add(pokemon){
     pokemonList.push(pokemon);
 
@@ -144,7 +142,7 @@ let pokemonRepository = (function (){
     })
   }
 
-  function loadDetails(item){
+  function loadDetails(item) {
     let url= item.detailsUrl;
     return fetch(url).then(function (response){
       return response.json();
@@ -163,7 +161,6 @@ let pokemonRepository = (function (){
       console.log(pokemon);
     });
   }
-
 });
 
     return {
