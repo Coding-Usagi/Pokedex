@@ -5,7 +5,7 @@ let pokemonRepository = (function (){
    function showModal(pokemon) {
      let modalContainer = document.querySelector('#modal-container');
      // What the modal looks like is defined
-     modalContainer.innerHTML = '';
+     modalContainer.innerHTML = ' ';
      let modal = document.createElement('div');
      modal.classList.add('modal');
 
