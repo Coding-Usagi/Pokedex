@@ -1,7 +1,6 @@
 let pokemonRepository = (function (){
   let pokemonList = [];
   let apiUrl ='https://pokeapi.co/api/v2/pokemon/?limit=150%22';
-  let modalContainer = document.querySelector('#modal-container');
 
   function getAll(){
     return pokemonList;
@@ -15,9 +14,9 @@ let pokemonRepository = (function (){
   function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
     let listPokemon = document.createElement("li");
-    let button = document.createElement("button");
+    let button = document.createElement("button") data-toggle="modal" data-target="modal";
     button.innerText = pokemon.name;
-    button.classList.add("button-test");
+    button.classList.add("btn btn-primary");
     // appends need to be within the addlistitem function so they are separate from the button eventlistener
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
@@ -56,6 +55,7 @@ let pokemonRepository = (function (){
       console.log(details);
       pokemon.imageUrl = details.sprites.front_default;
       pokemon.height = details.height;
+      pokemon.weight = details.weight;
       pokemon.types = [...details.types];
       //item.imageUrl = details.sprites.front_default;
       //item.height = details.height;
@@ -74,20 +74,6 @@ let pokemonRepository = (function (){
   }
 
   function showModal(pokemon, details) {
-
-    let modalContnainer = document.querySelector("modal-container");
-    // What the modal looks like is defined
-    modalContainer.innerHTML = ' ';
-    let modal = document.createElement('div');
-    modal.classList.add('modal');
-
-    //Close button is added to the modal
-    //Event listener is added to the close button
-    let closeButtonElement = document.createElement('button');
-    closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'Close';
-    closeButtonElement.addEventListener('click', hideModal);
-
     //modal title is defined
     let titleElement = document.createElement('h1');
     titleElement.innerText = pokemon.name;
@@ -110,7 +96,7 @@ let pokemonRepository = (function (){
 
     pokemonTypes.innerHTML = types;
     //pokemon.types.forEach((item) => (types += <p>${item.type.name}</p>));
-
+    // re-adjust the list so it shows in height, weight, type, img order
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
@@ -139,6 +125,8 @@ let pokemonRepository = (function (){
       hideModal();
     }
   });
+
+  li.addClass(group-list-item);
 
   return {
     add: add,
