@@ -14,7 +14,8 @@ let pokemonRepository = (function (){
   function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
     let listPokemon = document.createElement("li");
-    let button = document.createElement("button") data-toggle="modal" data-target="modal";
+    let button = document.createElement("button")
+    data-toggle="modal" data-target="modal";
     button.innerText = pokemon.name;
     button.classList.add("btn btn-primary");
     // appends need to be within the addlistitem function so they are separate from the button eventlistener
