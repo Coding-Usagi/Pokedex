@@ -14,15 +14,11 @@ let pokemonRepository = (function (){
   function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
     let listPokemon = document.createElement("li");
-    listPokemon.classList.add(
-      'list-group-item'
-    );
-
-    let button = document.createElement('button')
-    button.classList.add('btn', 'btn-primary');
-    button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', 'modal');
+    let button = document.createElement("button")
+    button.data-toggle("modal");
+    button.data-target("modal");
     button.innerText = pokemon.name;
+    button.classList.add("btn btn-primary");
     // appends need to be within the addlistitem function so they are separate from the button eventlistener
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
@@ -81,9 +77,6 @@ let pokemonRepository = (function (){
 
   function showModal(pokemon, details) {
     //modal title is defined
-    let modalBody = document.querySelector('.modal-body');
-    modalbody.innerText = '';
-
     let titleElement = document.createElement('h1');
     titleElement.innerText = pokemon.name;
 
@@ -98,7 +91,7 @@ let pokemonRepository = (function (){
     pokemonImage.src = pokemon.imageUrl;
 
     let pokemonTypes = document.createElement("ul");
-    let types = [];
+    let types = "";
     pokemon.types.forEach(function (item) {
       types += "<p>" + item.type.name + "</p>";
     });
@@ -106,14 +99,36 @@ let pokemonRepository = (function (){
     pokemonTypes.innerHTML = types;
     //pokemon.types.forEach((item) => (types += <p>${item.type.name}</p>));
     // re-adjust the list so it shows in height, weight, type, img order
-    //modal.appendChild(closeButtonElement);
-    //modal.appendChild(titleElement);
-    //modal.appendChild(contentElement);
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(contentElement);
     modal.appendChild(pokemonWeight);
     modal.appendChild(pokemonImage);
     modal.appendChild(pokemonTypes);
-    //modalContainer.appendChild(modal);
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add('is-visible');
   }
+
+  function hideModal() {
+    modalContainer.classList.remove('is-visible');
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      hideModal();
+    }
+  });
+  modalContainer.addEventListener('click', (e) => {
+    // Since this is also triggered when clicking INSIDE the modal
+    // We only want to close if the user clicks directly on the overlay
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+  });
+
+  li.addClass(group-list-item);
 
   return {
     add: add,
@@ -122,12 +137,13 @@ let pokemonRepository = (function (){
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails,
-    showModal: showModal
+    showModal: showModal,
+    hideModal: hideModal,
   };
 })();
 
-// Loop for the pokemon
 pokemonRepository.loadList().then(function(){
+  // Data is loaded
   pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
   });
