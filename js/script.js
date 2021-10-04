@@ -14,9 +14,6 @@ let pokemonRepository = (function (){
   function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
     let listPokemon = document.createElement("li");
-<<<<<<< Updated upstream
-    let button = document.createElement("button") data-toggle="modal" data-target="modal";
-=======
     listPokemon.classList.add(
       'list-group-item'
     );
@@ -25,7 +22,6 @@ let pokemonRepository = (function (){
     button.classList.add('btn', 'btn-primary');
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', 'modal');
->>>>>>> Stashed changes
     button.innerText = pokemon.name;
     // appends need to be within the addlistitem function so they are separate from the button eventlistener
     listPokemon.appendChild(button);
