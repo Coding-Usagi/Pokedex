@@ -37,5 +37,6 @@
 <h3> External Sources </h3>
 <p>
 Fetch Polyfill: https://github.com/github/fetch
+<br>
 Promise Polyfill: https://github.com/taylorhakes/promise-polyfill
 </p>
