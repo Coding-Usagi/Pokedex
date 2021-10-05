@@ -2,7 +2,7 @@
 <br>
 <h3> User Goals </h3>
 <p> User is able to view a list of data and see more details for a given data item on click of a modal. </p>
-<br>
+<br></br>
 
 <h3> Key Features </h3>
 <ul>
@@ -10,7 +10,7 @@
 <li>View a list of items</li>
 <li>On user action (clicking on a list item), users can view the details for that item</li>
 </ul>
-<br>
+<br></br>
 
 <h3> Technical Requirements </h3>
 <ul>
@@ -22,7 +22,7 @@
 <li>The app must use at least one additional complex UI patter, such as a modal, for details or touch interactions<li>
 <li>The app must not throw any errors when being used</li>
 </ul>
-<br>
+<br></br>
 
 <h3> Technologies used </h3>
 <ul>
@@ -32,7 +32,7 @@
 <li> jQuery </li>
 <li> Bootstrap </li>
 </ul>
-<br>
+<br></br>
 
 <h3> External Sources </h3>
 <p>
