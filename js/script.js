@@ -78,26 +78,38 @@ let pokemonRepository = (function (){
     //modal title is defined
     let modalBody = $('.modal-body');
     let modalTitle = $('.modal-title');
-    //let modalHeader = $('.modal-header');
 
-    modalTitle.empty();
     modalBody.empty();
+    modalTitle.empty();
 
-    let nameElement = $('<h1>' + pokemon.name + '</h1>');
-    let imageElementFront = $('<img class="modal-img" style="width:50%">');
-    imageElementFront.attr('src', pokemon.imageUrlFront);
-    let imageElementBack = $('<img class="modal-img" style="width:50%">');
-    imageElementBack.attr('src', pokemon.imageUrlBack);
-    let heightElement = $('<p>' + 'Height : ' + pokemon.height + '</p>');
-    let weightElement = $('<p>' + 'Weight : ' + pokemon.weight + '</p>');
-    let typesElement = $('<p>' + 'Types : ' + pokemon.types.join(', ') + '</p>');
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
 
-    modalTitle.append(nameElement);
-    modalBody.append(imageElementFront);
-    modalBody.append(imageElementBack);
-    modalBody.append(heightElement);
-    modalBody.append(weightElement);
-    modalBody.append(typesElement);
+    modalTitle.text(pokemon.name);
+
+    let titleElement = document.querySelector('.modal-title');
+    titleElement.innerText = pokemon.name;
+
+    let pokemonImage = document.createElement('img');
+    pokemonImage.classList.add('img-fluid');
+    pokemonImage.src = pokemon.imageUrl;
+
+    let pokemonHeight = document.createElement('p');
+    pokemonHeight.innerText = 'Height: ' + pokemon.height;
+
+    let pokemonWeight = document.createElement('p');
+    pokemonWeight.innerText = 'Height: ' + pokemon.weight;
+
+    let pokemonTypes = document.createElement('p');
+    pokemonTypes.innerText = 'Types: ' + ' ' + pokemon.types.map((t)=> t.type.name).join(',')
+
+    modalBody.append(pokemonHeight);
+    modalBody.append(pokemonWeight);
+    modalBody.append(pokemonImage);
+    modalBody.append(pokemonTypes);
+
+    $('#pokemonModal').modal('toggle');
+    
   }
 
     //let modalBody = document.querySelector('.modal-body');
@@ -130,7 +142,6 @@ let pokemonRepository = (function (){
     //modal.appendChild(pokemonWeight);
     //modal.appendChild(pokemonImage);
     //modal.appendChild(pokemonTypes);
-    //modalContainer.appendChild(modal);
 
   return {
     add: add,
@@ -140,7 +151,6 @@ let pokemonRepository = (function (){
     loadDetails: loadDetails,
     showDetails: showDetails,
     showModal: showModal
-
   };
 })();
 
