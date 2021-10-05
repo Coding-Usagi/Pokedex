@@ -21,7 +21,7 @@ let pokemonRepository = (function (){
     let button = document.createElement('button')
     button.classList.add('btn', 'btn-primary');
     button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', 'pokemonModal');
+    button.setAttribute('data-target', '#pokemonModal');
     listPokemon.classList.add('group-list-item');
     button.innerText = pokemon.name;
     // appends need to be within the addlistitem function so they are separate from the button eventlistener
@@ -109,7 +109,7 @@ let pokemonRepository = (function (){
     modalBody.append(pokemonTypes);
 
     $('#pokemonModal').modal('toggle');
-    
+
   }
 
     //let modalBody = document.querySelector('.modal-body');
