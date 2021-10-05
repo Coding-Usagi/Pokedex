@@ -19,7 +19,7 @@
 <li>The app enables the viewing fo more details for a givem list item on demand, such as when clicking on a list item</li>
 <li>The JavaScript code is formatted according to ESLint rules</li>
 <li>The app must have CSS styling</li>
-<li>The app must use at least one additional complex UI patter, such as a modal, for details or touch interactions<li>
+<li>The app must use at least one additional complex UI pattern, such as a modal, for details or touch interactions</li>
 <li>The app must not throw any errors when being used</li>
 </ul>
 <br></br>
