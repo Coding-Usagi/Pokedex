@@ -98,7 +98,7 @@ let pokemonRepository = (function (){
     pokemonHeight.innerText = 'Height: ' + pokemon.height;
 
     let pokemonWeight = document.createElement('p');
-    pokemonWeight.innerText = 'Height: ' + pokemon.weight;
+    pokemonWeight.innerText = 'Weight: ' + pokemon.weight;
 
     let pokemonTypes = document.createElement('p');
     pokemonTypes.innerText = 'Types: ' + ' ' + pokemon.types.map((t)=> t.type.name).join(',')
